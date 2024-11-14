@@ -1,0 +1,63 @@
+/* src/components/Step2.css */
+.step2-form {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .step2-form h2 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtext {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .form-input.error {
+    border-color: #e74c3c;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 0.25rem;
+  }
+  
+  .submit-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 1.5rem;
+  }
+  
+  .submit-button:hover {
+    background-color: #5b4db8;
+  }
+  

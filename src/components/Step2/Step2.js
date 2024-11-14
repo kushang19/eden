@@ -3,25 +3,27 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { saveFormData } from '../../redux/reducer/formSlice';
+import './step2.css'; // Import the external CSS file
 
 const Step2 = ({ onNext, onPrev }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    // Dispatch form data to Redux store
     dispatch(saveFormData(data));
-    onNext(); // Navigate to the next step
+    onNext();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: '600px', margin: 'auto' }}>
+    <form onSubmit={handleSubmit(onSubmit)} className="step2-form">
       <h2>Let's set up a home for all your work</h2>
-      <p>You can always create another workspace later.</p>
-      <div>
-        <label>Workspace Name</label>
+      <p className="subtext">You can always create another workspace later.</p>
+      <div className="form-group">
+        <label htmlFor="workspaceName">Workspace Name</label>
         <input
+          id="workspaceName"
           type="text"
+          placeholder='Eden'
           {...register('workspaceName', {
             required: 'Workspace Name is required',
             pattern: {
@@ -29,29 +31,27 @@ const Step2 = ({ onNext, onPrev }) => {
               message: 'Workspace Name can only contain letters and spaces',
             },
           })}
+          className={`form-input ${errors.workspaceName ? 'error' : ''}`}
         />
-        {errors.workspaceName && (
-          <p style={{ color: 'red' }}>{errors.workspaceName.message}</p>
-        )}
+        {errors.workspaceName && <p className="error-message">{errors.workspaceName.message}</p>}
       </div>
-      <div>
-        <label>Workspace URL (optional)</label>
+      <div className="form-group">
+        <label htmlFor="workspaceURL">Workspace URL (optional)</label>
         <input
+          id="workspaceURL"
           type="text"
+          placeholder='www.eden.com'
           {...register('workspaceURL', {
             pattern: {
               value: /^[a-zA-Z0-9-_.]*$/,
               message: 'Workspace URL can only contain letters, numbers, dashes, underscores, and periods',
             },
           })}
+          className={`form-input ${errors.workspaceURL ? 'error' : ''}`}
         />
-        {errors.workspaceURL && (
-          <p style={{ color: 'red' }}>{errors.workspaceURL.message}</p>
-        )}
+        {errors.workspaceURL && <p className="error-message">{errors.workspaceURL.message}</p>}
       </div>
-      {/* Optional Previous Button */}
-      {/* {onPrev && <button type="button" onClick={onPrev}>Previous</button>} */}
-      <button type="submit">Create Workspace</button>
+      <button type="submit" className="submit-button">Create Workspace</button>
     </form>
   );
 };

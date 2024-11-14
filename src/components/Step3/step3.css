@@ -1,0 +1,69 @@
+/* src/components/Step3.css */
+.step3-form {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .step3-form h2 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtext {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  
+  .options-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .option-card {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .option-card.selected {
+    border-color: #6A5ACD;
+  }
+  
+  .option-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 0.25rem;
+  }
+  
+  .submit-button.options-btn {
+    width: 100%;
+    max-width: 420px;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 1.5rem;
+  }
+  
+  .submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

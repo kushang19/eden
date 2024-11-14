@@ -1,28 +1,32 @@
 // src/MultiStepForm.js
-import React, { useState } from 'react';
-import ProgressBar from '../ProgressBar/ProgressBar';
-import Step1 from '../Step1/Step1';
-import Step2 from '../Step2/Step2';
-import Step3 from '../Step3/Step3';
-import Step4 from '../Step4/Step4';
+import React, { useState } from "react";
+import ProgressBar from "../ProgressBar/ProgressBar";
+import Step1 from "../Step1/Step1";
+import Step2 from "../Step2/Step2";
+import Step3 from "../Step3/Step3";
+import Step4 from "../Step4/Step4";
+import logo from "../../assets/logo1.png"
 
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleNext = () => {
     if (currentStep < 4) {
-      setCurrentStep(prev => prev + 1);
+      setCurrentStep((prev) => prev + 1);
     }
   };
 
   const handlePrev = () => {
     if (currentStep > 1) {
-      setCurrentStep(prev => prev - 1);
+      setCurrentStep((prev) => prev - 1);
     }
   };
 
   return (
     <div className="multi-step-form">
+      <div className="image-logo" style={{margin: "20px 0"}}>
+        <img src={logo} alt="My Logo" />
+      </div>
       <ProgressBar step={currentStep} />
       {currentStep === 1 && <Step1 onNext={handleNext} />}
       {currentStep === 2 && <Step2 onNext={handleNext} onPrev={handlePrev} />}

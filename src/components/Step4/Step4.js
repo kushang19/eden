@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { saveFormData } from '../../redux/reducer/formSlice';
-import './step4.css';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { saveFormData } from "../../redux/reducer/formSlice";
+import "./step4.css";
+import checkicon from "../../assets/checkicon.png";
 
 const Step4 = () => {
   const dispatch = useDispatch();
@@ -38,11 +39,11 @@ const Step4 = () => {
 
   const handleDelete = () => {
     const clearedData = {
-      fullName: '',
-      displayName: '',
-      workspaceName: '',
-      workspaceURL: '',
-      selectedOption: '',
+      fullName: "",
+      displayName: "",
+      workspaceName: "",
+      workspaceURL: "",
+      selectedOption: "",
     };
     dispatch(saveFormData(clearedData));
     setEditableData(clearedData);
@@ -50,8 +51,13 @@ const Step4 = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Congratulations, {formData.fullName || 'User'}!</h2>
+    <div className="container step4">
+      <div
+        className="check-icon"
+      >
+        <img src={checkicon} alt="check icon"  />
+      </div>
+      <h2>Congratulations, {formData.fullName || "User"}!</h2>
       <p>You have completed onboarding, you can start using the Eden!</p>
       {!isModalOpen && (
         <button onClick={handleViewData} className="viewDataButton">
@@ -112,7 +118,10 @@ const Step4 = () => {
                   </button>
                 </>
               )}
-              <button onClick={() => setIsModalOpen(false)} className="closeButton">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="closeButton"
+              >
                 Close
               </button>
             </div>
