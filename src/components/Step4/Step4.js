@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { saveFormData } from "../../redux/reducer/formSlice";
 import "./step4.css";
-import checkicon from "../../assets/checkicon.png";
+import checkicon from "../../assets/images/checkicon.png";
 
 const Step4 = () => {
   const dispatch = useDispatch();
