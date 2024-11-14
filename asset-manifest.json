@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/eden/static/css/main.89b883d5.css",
+    "main.js": "/eden/static/js/main.986b0fc7.js",
+    "index.html": "/eden/index.html",
+    "main.89b883d5.css.map": "/eden/static/css/main.89b883d5.css.map",
+    "main.986b0fc7.js.map": "/eden/static/js/main.986b0fc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89b883d5.css",
+    "static/js/main.986b0fc7.js"
+  ]
+}
